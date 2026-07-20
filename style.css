@@ -20,23 +20,61 @@ body {
 /* --- Заголовок (Hero) --- */
 .hero-section {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #c3c4c5 0%, #646667 100%);
+    padding: 80px 20px; /* Оставим те же отступы внутри */
     margin-bottom: 60px;
-    position: relative;
-    overflow: hidden;
+    position: relative; /* Важно! Для позиционирования картинки */
 }
 
 .hero-section h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #5e5d5d;
+    color: #252424;
     margin-bottom: 15px;
+}
+/* Подложка под заголовком h1 */
+.hero-section > h1 {
+    display: inline-block; /* Чтобы работал margin/padding */
+    font-size: 2.5rem;
+    color: #eeeeee; /* Белый цвет для контраста */
+    position: relative;
+    z-index: 1; /* Выше маски */
+
+    /* Выступаем за границы секции */
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    /* Полупрозрачный серый или белый фон */
+    background-color: rgba(60, 60, 60, 0.7); 
+
+    border-radius: 16px; /* Скругление углов */
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color: #0a0a0a;
+}
+.subtitle {
+    font-size: 1rem;
+    color: #2d2d2d; /* Светло-серая */
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 3px; /* Разреженные буквы */
+    padding-bottom: 5px;
+    position: relative;
+}
+
+/* Эффект "вырезанного" текста */
+.subtitle::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px; /* Высота тени */
+    background-color: rgba(0, 0, 0, 0.6); /* Темная полоса */
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    z-index: -1;
 }
 
 /* --- Карточка модели --- */
@@ -45,7 +83,7 @@ body {
     gap: 40px;
     align-items: stretch; /* Важно! Растягиваем по высоте */
     padding: 40px 0;
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid #424242;
 }
 
 /* Чередование блоков (шахматный порядок) */
@@ -196,4 +234,64 @@ footer {
     color: #d8d8d8;
     margin-top: 10px;
     margin-bottom: 0;
+}
+/* Подложка для всех блоков с текстом */
+.model-card .info-block {
+    background-color: rgba(117, 117, 117, 0.1); /* Полупрозрачный серый фон по умолчанию */
+}
+
+/* Чередование оттенков для шахматного эффекта */
+.model-card:nth-child(even) .info-block {
+    background-color: rgba(104, 104, 104, 0.2);
+}
+
+/* Для мобильных устройств убираем подложки, чтобы не мешали восприятию колонок */
+@media (max-width: 768px) {
+    .model-card .info-block {
+        background-color: transparent;
+    }
+}
+/* Выступаем только по горизонтали */
+.info-block {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.info-block { border-radius: 8px; }
+/* Убираем старый градиент из hero-section */
+.hero-section::before,
+.hero-section::after { content: none !important; }
+
+/* Создаем картинку-фон */
+.hero-bg {
+    /* Картинка занимает всю ширину и высоту родительского блока */
+    width: 100%;
+    height: 100%;
+    background-image: url('interior03.jpg'); /* Замените путь */
+    background-size: cover; /* Растягиваем по размеру родителя */
+    background-position: center center; /* Центрируем */
+    background-repeat: no-repeat;
+
+    /* Делаем картинку абсолютно позиционированной */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Это важно — картинка должна быть под текстом */
+}
+/* ⚡️ Добавляем полупрозрачную маску поверх картинки */
+.hero-section::after { /* Используем псевдоэлемент ::after */
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0; /* Растягиваем на всю секцию hero */
+    
+    /* Полупрозрачный черный фон создает эффект затемнения */
+    background-color: rgba(0, 0, 0, 0.4); 
+    /* Вы можете менять значение от 0 до 1:
+       0.3 — легкая дымка,
+       0.5 — умеренное затемнение,
+       0.7 — сильное затемнение */
+
+    pointer-events: none; /* Чтобы можно было кликать сквозь этот слой */
 }
