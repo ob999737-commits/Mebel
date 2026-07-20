@@ -1,0 +1,159 @@
+/* --- Базовые настройки --- */
+{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(180deg, rgba(247, 250, 252, 1) 0%, rgba(239, 246, 251, 1) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: transparent; /* Это важно! */
+}
+
+/* --- Заголовок (Hero) --- */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #6c6e71 0%, #32363a 100%);
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- Карточка модели --- */
+.model-card {
+    display: flex;
+    gap: 40px;
+    align-items: stretch; /* Важно! Растягиваем по высоте */
+    padding: 40px 0;
+    border-bottom: 1px solid #5b5b5b;
+}
+
+/* Чередование блоков (шахматный порядок) */
+.model-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.info-block {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.sku {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.btn-view {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d22b2b; /* Красный акцент */
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Место под саму 3D-модель */
+.model-frame {
+    flex: 1;
+    min-width: 400px;
+    height: 500px; /* Фиксированная высота для загрузки */
+    position: relative; /* Обязательно для model-viewer */
+}
+
+/* Убираем лишние отступы внутри компонента */
+.model-frame > div,
+.model-frame > button {
+    margin-top: 0 !important;
+}
+
+/* --- Подвал --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* --- Анимация плавного появления --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.model-card:nth-child(1) .fade-in { animation-delay: 0.2s; }
+.model-card:nth-child(2) .fade-in { animation-delay: 0.4s; }
+.model-card:nth-child(3) .fade-in { animation-delay: 0.6s; }
+.model-card:nth-child(4) .fade-in { animation-delay: 0.8s; }
+.model-card:nth-child(5) .fade-in { animation-delay: 1.0s; }
+.model-card:nth-child(6) .fade-in { animation-delay: 1.2s; }
+.model-card:nth-child(7) .fade-in { animation-delay: 1.4s; }
+.model-card:nth-child(8) .fade-in { animation-delay: 1.6s; }
+.model-card:nth-child(9) .fade-in { animation-delay: 1.8s; }
+.model-card:nth-child(10) .fade-in { animation-delay: 2.0s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Адаптивность для планшетов и телефонов --- */
+@media (max-width: 768px) {
+    .model-card {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .info-block h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
