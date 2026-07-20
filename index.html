@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="main.css">
     <!-- Import the component -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </head>
 <body>
 
@@ -25,6 +26,25 @@
     <header class="hero-section">
         <h1>Каталог интерактивных 3D-моделей мебели</h1>
         <p class="subtitle">Детали создают совершенство</p>
+        <!-- Новый блок с иконками -->
+<section class="features-section container fade-in">
+    <div class="feature-item">
+        <img src="/Kreslo.png" alt="Kreslo" />
+        <h4>Натуральные и экологичные материалы</h4>
+    </div>
+    <div class="feature-item">
+        <img src="/Stol.png" alt="Table" />
+        <h4>Выезд дизайнера и дизайн-проект бесплатно</h4>
+    </div>
+    <div class="feature-item">
+        <img src="/free-icon.png" alt="Art" />
+        <h4>Быстрая доставка и профессиональная сборка</h4>
+    </div>
+    <div class="feature-item">
+        <img src="/Cvetok.png" alt="Svetok" />
+        <h4>До 3 лет гарантии на мебель, пожизненная на фурнитуру</h4>
+    </div>
+</section>
     </header>
 
     <!-- Контейнер для всех карточек -->
@@ -216,7 +236,12 @@
         </section>
 
         <!-- Блок модели №9 -->
-        
+        <section class="model-card fade-in">
+            <div class="info-block">
+                <h2>название</h2>
+                <p class="description">описание</p>
+                <p class="sku"><strong>Артикул:</strong> арт</p>
+            </div>
 
 
         <!-- Блок модели №10 -->
@@ -245,7 +270,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Презентация для заказчика. Все права защищены.</p>
+        <p>&copy; 2026. ООО "Янтарь". Все права защищены.</p>
     </footer>
 
 
