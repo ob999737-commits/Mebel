@@ -6,7 +6,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #979797;
     background: linear-gradient(180deg, rgba(247, 250, 252, 1) 0%, rgba(239, 246, 251, 1) 100%);
 }
 
@@ -21,7 +21,7 @@ body {
 .hero-section {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #6c6e71 0%, #32363a 100%);
+    background: linear-gradient(135deg, #6c6e71 0%, #6e7174 100%);
     margin-bottom: 60px;
     position: relative;
     overflow: hidden;
