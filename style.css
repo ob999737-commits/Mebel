@@ -28,14 +28,14 @@ body {
 .hero-section h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #252424;
+    color: #cfcfcf;
     margin-bottom: 15px;
 }
 /* Подложка под заголовком h1 */
 .hero-section > h1 {
     display: inline-block; /* Чтобы работал margin/padding */
     font-size: 2.5rem;
-    color: #eeeeee; /* Белый цвет для контраста */
+    color: #f0eeee; /* Белый цвет для контраста */
     position: relative;
     z-index: 1; /* Выше маски */
 
@@ -57,7 +57,7 @@ body {
 }
 .subtitle {
     font-size: 1rem;
-    color: #2d2d2d; /* Светло-серая */
+    color: #090909; /* Светло-серая */
     text-transform: uppercase; /* Все буквы заглавные */
     letter-spacing: 3px; /* Разреженные буквы */
     padding-bottom: 5px;
