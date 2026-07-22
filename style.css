@@ -199,11 +199,11 @@ footer {
 .features-section {
     display: flex;
     justify-content: space-between; /* Равное расстояние между элементами */
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }
 .feature-item {
     text-align: center;
-    width: calc(25% - 10px); /* Четыре колонки с небольшим отступом */
+    width: calc(30% - 15px); /* Четыре колонки с небольшим отступом */
     padding-top: 40px;
 }
 .feature-item img {
@@ -294,4 +294,53 @@ footer {
        0.7 — сильное затемнение */
 
     pointer-events: none; /* Чтобы можно было кликать сквозь этот слой */
+}
+/* Убираем разделительную линию */
+.features-section {
+    border-bottom: none;
+}
+
+/* Делаем текст частью карточки */
+.feature-item img {
+    margin-right: 1rem; /* Отступ от текста */
+    
+}
+
+.icon-text {
+    display: inline-block;
+    font-size: 0.9rem; /* Немного уменьшим размер для баланса */
+    line-height: 1.2;
+    padding-top: 0.7em; /* Вертикально выравнивает текст по центру блока */
+}
+.subtitle {
+    /* Текстура */
+    background-image: url('wood-light-seamless.jpeg');
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: auto 60px; /* Высота полосы = 60 пикселей */
+    opacity: 0.6; /* Полупрозрачный эффект */
+
+    /* Стиль текста */
+    color: #0b0b0b; /* Белый цвет */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    
+
+       /* Стиль текста */
+    font-family: 'Cormorant+Garamond', serif; /* ВАЖНО! Замените название на выбранное вами */
+    font-style: bold;
+    color: #060606;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.feature-item img {
+    /* Лёгкая тень снизу */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    
+    /* Увеличим размер иконок для контраста */
+    width: 90px;
+    height: auto;
+
+    /* Сделаем их чуть выше текста */
+    margin-bottom: 25px; /* Больше пространства под иконкой */
 }
