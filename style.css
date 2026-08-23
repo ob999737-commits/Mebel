@@ -361,4 +361,13 @@ footer {
     background-color: rgba(163, 163, 163, 0.9); /* Почти чёрный, но чуть прозрачный */
     opacity: 0,6;
 }    
+.characteristics {
+    list-style-type: none; /* убираем маркеры списка */
+    padding-left: 0;
+}
+    .characteristics li {
+    color: #111111; /* Более тёмно-серый цвет */
+}
+
+
 
