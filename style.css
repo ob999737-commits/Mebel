@@ -368,11 +368,7 @@ footer {
     .characteristics li {
     color: #111111; /* Более тёмно-серый цвет */
 }
-/* Скрываем модель, пока она загружается */ 
-model-viewer { visibility: hidden; } 
-/* Показываем её только после полной загрузки */ 
-model-viewer[loading="loaded"] { visibility: visible; 
-}
+
 
 
 
